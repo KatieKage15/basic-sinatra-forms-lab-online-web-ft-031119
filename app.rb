@@ -2,19 +2,19 @@ require 'sinatra/base'
 
 class App < Sinatra::Base
 
-  get "/team" do
-    erb :"/team/index.html"
+  get "/newteam" do
+    erb :"/newteam/index.html"
   end
 
-  get "/team/new" do
-    erb :"/team/new.html"
+  get "/newteam" do
+    erb :"/newteam/new.html"
   end
 
-  get "/team" do
-    erb :team
+  get "/newteam" do
+    erb :newteam
   end
 
-  post "/team" do
+  post "/newteam" do
     team = Team.new(params)
     team.save
     redirect "/workouts/#{workout.id}"
